@@ -15,8 +15,11 @@ struct ContentView: View {
             List {
                 ForEach(userData.tasks) { task in
                     Button(action: {
-                        let index = self.userData.tasks.firstIndex(of: task)
-                        self.userData.tasks[index!].isCheck.toggle()
+                        guard let index = self.userData.tasks.firstIndex(of: task) else {
+                            return
+                        }
+                        
+                        self.userData.tasks[index].isCheck.toggle()
                     }){
                         ListRow(task: task.task, isCheck: task.isCheck)
                     }
