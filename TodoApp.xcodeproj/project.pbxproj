@@ -11,6 +11,9 @@
 		2E2D9ECF2670DF7400DCD39A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2D9ECE2670DF7400DCD39A /* ContentView.swift */; };
 		2E2D9ED12670DF7600DCD39A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E2D9ED02670DF7600DCD39A /* Assets.xcassets */; };
 		2E2D9ED42670DF7600DCD39A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E2D9ED32670DF7600DCD39A /* Preview Assets.xcassets */; };
+		2E2D9EDC2670E2ED00DCD39A /* ListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2D9EDB2670E2ED00DCD39A /* ListRow.swift */; };
+		2E2D9EE02670E3AE00DCD39A /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2D9EDF2670E3AE00DCD39A /* TaskModel.swift */; };
+		2E2D9EE42670E62A00DCD39A /* Tasks+mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2D9EE32670E62A00DCD39A /* Tasks+mock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,9 @@
 		2E2D9ED02670DF7600DCD39A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E2D9ED32670DF7600DCD39A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2E2D9ED52670DF7600DCD39A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E2D9EDB2670E2ED00DCD39A /* ListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRow.swift; sourceTree = "<group>"; };
+		2E2D9EDF2670E3AE00DCD39A /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		2E2D9EE32670E62A00DCD39A /* Tasks+mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tasks+mock.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +59,8 @@
 			isa = PBXGroup;
 			children = (
 				2E2D9ECC2670DF7400DCD39A /* TodoAppApp.swift */,
-				2E2D9ECE2670DF7400DCD39A /* ContentView.swift */,
+				2E2D9EDE2670E39E00DCD39A /* Models */,
+				2E2D9EDD2670E39100DCD39A /* Views */,
 				2E2D9ED02670DF7600DCD39A /* Assets.xcassets */,
 				2E2D9ED52670DF7600DCD39A /* Info.plist */,
 				2E2D9ED22670DF7600DCD39A /* Preview Content */,
@@ -65,8 +72,34 @@
 			isa = PBXGroup;
 			children = (
 				2E2D9ED32670DF7600DCD39A /* Preview Assets.xcassets */,
+				2E2D9EE52670E63000DCD39A /* Mocks */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2E2D9EDD2670E39100DCD39A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2E2D9ECE2670DF7400DCD39A /* ContentView.swift */,
+				2E2D9EDB2670E2ED00DCD39A /* ListRow.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2E2D9EDE2670E39E00DCD39A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2E2D9EDF2670E3AE00DCD39A /* TaskModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2E2D9EE52670E63000DCD39A /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				2E2D9EE32670E62A00DCD39A /* Tasks+mock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +171,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E2D9EE42670E62A00DCD39A /* Tasks+mock.swift in Sources */,
 				2E2D9ECF2670DF7400DCD39A /* ContentView.swift in Sources */,
 				2E2D9ECD2670DF7400DCD39A /* TodoAppApp.swift in Sources */,
+				2E2D9EE02670E3AE00DCD39A /* TaskModel.swift in Sources */,
+				2E2D9EDC2670E2ED00DCD39A /* ListRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +316,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.OkazakiRui.TodoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -302,7 +338,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.OkazakiRui.TodoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
