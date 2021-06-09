@@ -8,17 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var tasks:[Task] = []
+    @ObservedObject var userData = UserData()
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(tasks) { task in
-                    ListRow(task: task)
+                ForEach(userData.tasks) { task in
+                    Button(action: {
+                        let index = self.userData.tasks.firstIndex(of: task)
+                        self.userData.tasks[index!].isCheck.toggle()
+                    }){
+                        ListRow(task: task.task, isCheck: task.isCheck)
+                    }
                 }
+                
+                
                 Text("+")
             }
-//            .navigationTitle("TodoList")
+            //            .navigationTitle("TodoList")
             .navigationBarTitle(Text("Tasks"))
             .navigationBarItems(trailing: Text("Deleat"))
         }
@@ -28,6 +35,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(tasks: [.mock1,.mock2])
+        ContentView()
     }
 }

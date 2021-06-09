@@ -8,17 +8,19 @@
 import SwiftUI
 
 struct ListRow: View {
-    let task:Task
+    let task:String
+    var isCheck:Bool
+    
     var body: some View {
         HStack {
-            Text(task.isEnd ? "✓" : "□")
-            Text(task.name)
+            Text(isCheck ? "✓" : "□")
+            Text(task)
         }
     }
 }
 
 struct ListRow_Previews: PreviewProvider {
     static var previews: some View {
-        ListRow(task: .mock1)
+        ListRow(task: "運動", isCheck: true)
     }
 }
