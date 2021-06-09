@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-//    @ObservedObject var userData = UserData()
+    //    @ObservedObject var userData = UserData()
     @EnvironmentObject var userData: UserData
     
     var body: some View {
@@ -19,7 +19,6 @@ struct ContentView: View {
                         guard let index = self.userData.tasks.firstIndex(of: task) else {
                             return
                         }
-                        
                         self.userData.tasks[index].isCheck.toggle()
                     }){
                         ListRow(task: task.task, isCheck: task.isCheck)
@@ -49,7 +48,7 @@ struct ContentView: View {
     
     func deleteTask(){
         let necessaryTask = self.userData.tasks.filter({!$0.isCheck})
-//        isCheck が false のものだけ配列に格納
+        //        isCheck が false のものだけ配列に格納
         self.userData.tasks = necessaryTask
     }
 }
