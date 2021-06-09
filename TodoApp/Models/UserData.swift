@@ -14,6 +14,7 @@ class UserData: ObservableObject {
         UserTask(task: "課題", isCheck: false)
     ]
     
+    @Published var isEditing: Bool = false
     
     
 }
