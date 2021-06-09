@@ -30,9 +30,18 @@ struct ContentView: View {
             }
             //            .navigationTitle("TodoList")
             .navigationBarTitle(Text("Tasks"))
-            .navigationBarItems(trailing: Text("Deleat"))
+            .navigationBarItems(trailing: Button(action: {
+                deleteTask()
+            }, label: {
+                Text("delete")
+            }))
         }
-        
+    }
+    
+    func deleteTask(){
+        let necessaryTask = self.userData.tasks.filter({!$0.isCheck})
+//        isCheck が false のものだけ配列に格納
+        self.userData.tasks = necessaryTask
     }
 }
 
